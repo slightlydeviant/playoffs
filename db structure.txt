@@ -29,6 +29,8 @@ table.League
   - League Name
   - League Icon (maybe uploadable)
   - Rule Format (if different scoring rules apply)
+  - isPrivate
+  - Password
 
 table.User
   - User from django.auth.contrib.models

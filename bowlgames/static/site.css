@@ -56,3 +56,14 @@
   border-color: black;
   text-align: center;
 }
+
+#homejumbo {
+  background-image: url(./images/bracket.jpg);
+  background-color: white;
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+}

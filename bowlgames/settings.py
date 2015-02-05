@@ -102,9 +102,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    "C:/Users/elee/Documents/Misc/DjangoWebProjects/bowlgames/bowlgames/static/",
-    "/home/hadoop/PhoneApp/DjangoWeb/bowlgames/bowlgames/static/",
-    "/home/web/sites/bowlgames_development/static/",
+    "C:/Users/elee/Documents/Misc/DjangoWebProjects/playoffs/bowlgames/static/",
 )
 
 # Template Directory

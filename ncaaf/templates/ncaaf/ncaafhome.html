@@ -1,14 +1,45 @@
-
 {% extends "base.html" %}
-{% block guestlinks %}
-	<a href="{% url 'accounts:login_page' %}">Log in</a>
-{% endblock %}
-
 
 {% block content %}
 <div class="container">
 	<div id="fbjumbo" class="jumbotron">
 		<h2>Welcome to College Football Bowl Champions!</h2>
 	</div>
+	<div class="container">
+		<h3>To start playing, create a league below and invite your friends</h3>
+		<div class="container">
+			{% if league %}
+				{% if league.pw == "" %}
+					<p class="create-success">You have successfully created a the public league "{{ league.name }}" with id "{{ league.id }}"</p>
+				{% else %}
+					<p class="create-success">You have successfully created a the private league "{{ league.name }}" with id "{{ league.id }}" and password "{{ league.pw }}"</p>
+				{% endif %}
+			{% endif %}
+			{% if error %}
+			<p class="create-error">{{ error }}</p>
+			{% endif %}
+			{% load crispy_forms_tags %}
+			{% crispy form %}
+		</div>
+	</div>
 </div>
+
+<script type="text/javascript">
+	$(function () {
+		$("#div_id_password")[0].style.display = "none";
+		var i = true;
+		$("#id_privacy").click(function(){
+			//console.log($("#id_privacy")[0].value);
+			if (i == true) {
+				$("#div_id_password")[0].style.display = "block";
+				console.log(i);
+				i = false;
+			} else {
+				$("#div_id_password")[0].style.display = "none";
+				console.log(i);
+				i = true;
+			}
+		});
+	});
+</script>
 {% endblock %}

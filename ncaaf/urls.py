@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
+from ncaaf.views import *
 
 urlpatterns = patterns('',
-    url(r'^$', 'ncaaf.views.ncaafhome', name = 'ncaafhome'),
+    url(r'^$', ncaafHome.as_view(), name = 'ncaafhome'),
 )

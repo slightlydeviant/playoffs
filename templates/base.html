@@ -64,6 +64,7 @@
       				{% if user.is_active %}
       				<p class="navbar-text">Welcome back, <strong>{% firstof user.get_short_name user.get_username %}</strong>!
                 <div id="nav-links" class="btn-group btn-group-xs" role="group" aria-label="...">
+                  <a href="#" class="btn btn-warning" role="button">My Leagues</a>
                   <a href="{% url 'accounts:logout' %}" class="btn btn-warning" role="button">Log out</a>
                 </div>
       				{% else %}
