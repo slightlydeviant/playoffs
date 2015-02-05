@@ -1,0 +1,58 @@
+.form-control:focus {
+  border-color: #448450;
+  box-shadow: 0px 1px 1px #6BCE7D inset, 0px 0px 8px #6BCE7D;
+}
+
+.btn-primary {
+  /*color: #000000;
+  background-color: #F7F70E;
+  border-color: #000000;*/
+  color: #FFFFFF;
+  background-color: #4BAA06;
+  border-color: #000000;
+}
+.btn-primary:hover {
+  background-color: #3A8405;
+}
+
+.navbar-default {
+  background-color: #1C3F02;
+  color: #FFFDF7;
+}
+.navbar-default .navbar-brand {
+  color: #FFFDF7;
+}
+.navbar-default .navbar-brand:hover {
+  color: #E9FF00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #FFFDF7;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #E9FF00;
+}
+.navbar-default .navbar-text {
+  color: #FFFDF7;
+}
+
+#nav-links {
+  margin-top: 14px;
+}
+
+#fbjumbo {
+  background-image: url(./images/fbfield.jpg);
+  background-size: 100%;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+}
+
+#bkbjumbo {
+  background-image: url(./images/bkbcourt.jpg);
+  background-size: 100%;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+}

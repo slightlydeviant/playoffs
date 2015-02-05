@@ -1,0 +1,46 @@
+table.Team (contains all of the teams in FBS)
+  - TeamID
+  - Display Name
+  - ESPN Name
+  - Display Initial
+  - Display Backup Initial
+
+table.Game (contains all games ever)
+  - GameID
+  - Display Name
+  - ESPN Name
+
+table.Playoff
+  - PlayoffID
+  - GameID
+  - isSemifinal
+  - isFinal
+  - Season
+
+table.Matchups (junction table)
+  - MatchupID
+  - Season
+  - GameID
+  - Home (a TeamID)
+  - Visitor (a TeamID)
+
+table.League
+  - LeagueID
+  - League Name
+  - League Icon (maybe uploadable)
+  - Rule Format (if different scoring rules apply)
+
+table.User
+  - User from django.auth.contrib.models
+
+table.LeagueUsers (junction table of users and leagues)
+  - LeagueUserID
+  - UserID
+  - LeagueID
+  - isCreator (boolean if that user is the creator of that league)
+
+table.UserPicks
+  - UserPickID
+  - LeagueUserID
+  - MatchupID
+  - Pick (a TeamID)

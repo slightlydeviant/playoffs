@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block guestlinks %}
+	<a href="{% url 'accounts:login_page' %}">Log in</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+	<div id="fbjumbo" class="jumbotron">
+		<h2>Welcome to College Football Bowl Champions!</h2>
+	</div>
+</div>
+{% endblock %}

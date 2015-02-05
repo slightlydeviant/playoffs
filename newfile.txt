@@ -1,0 +1,93 @@
+<div class="gameDay-Container">
+  <div class="score-row">
+    <div class="span-2 0-gameCount">
+    <div class="mod-container mod-no-header-footer mod-ncf-scorebox final-state 400609076 " id="400609076-gameContainer">
+      <div class="mod-content">
+        <span class="sort" style="display: none;">400609076</span>
+        <span class="sortValue" id="400609076-sortValue" style="display:none;">1</span>
+          <div class="game-header">
+            <div class="game-status"><p id="400609076-statusText">Final</p>
+            </div>
+          <div class="tv" id="400609076-preTV" style="display:none">
+            <p>FOX</p>
+          </div>
+          <ul class="score header" id="400609076-linescoreHeader" style="display:block">
+            <li id="400609076-lh1">1</li><li id="400609076-lh2">2</li><li id="400609076-lh3">3</li>
+            <li id="400609076-lh4">4</li><li id="400609076-OTHeader"> </li><li class="final">T</li>
+          </ul>
+          </div>
+          <div class="team visitor">
+            <div class="winner-arrow" id="400609076-aWinner" style="display:none"></div>
+            <div class="logo-small"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/12.png&amp;w=50&amp;h=50&amp;transparent=true"/></div>
+            <div class="team-capsule">
+              <p class="team-name" id="400609076-aNameOffset">
+                <span style="padding-right: 3px; font-size: 11px;">7</span>
+                <span id="400609076-aTeamName">
+                  <a href="http://espn.go.com/college-football/team/_/id/12/arizona-wildcats" title="Arizona">Arizona</a>
+                </span>
+                <span id="400609076-aPossession" style="padding-left:2px; display:none">
+                  <img src="http://a.espncdn.com/i/nfl/scoreboard/icon-football.png" style="width:14px;height:9px;"/>
+                </span>
+              </p>
+              <p class="record" id="400609076-aRecord">(10-3, 7-2 Pac-12)</p>
+            </div>
+            <ul class="team-links" id="400609076-aTeamLinks" style="display:none;">
+              <li><a href="/ncf/teams/roster?teamId=12">Roster</a> »</li>
+              <li><a href="/ncf/teams/stats?teamId=12&amp;year=2014">Stats</a> »</li>
+            </ul>
+            <ul class="score" id="400609076-aScores" style="display:block">
+              <li id="400609076-aScore1">0</li><li id="400609076-aScore2">0</li>
+              <li id="400609076-aScore3">7</li><li id="400609076-aScore4">6</li>
+              <li id="400609076-aScore5"> </li><li class="final" id="400609076-aTotal">13</li>
+            </ul>
+          </div>
+          <div class="team home">
+            <div class="winner-arrow" id="400609076-hWinner" style="display:block"></div>
+            <div class="logo-small">
+              <img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2483.png&amp;w=50&amp;h=50&amp;transparent=true"/>
+            </div>
+            <div class="team-capsule">
+              <p class="team-name" id="400609076-hNameOffset">
+                <span style="padding-right: 3px; font-size: 11px;">2</span>
+                <span id="400609076-hTeamName">
+                  <a href="http://espn.go.com/college-football/team/_/id/2483/oregon-ducks" title="Oregon">Oregon</a>
+                </span>
+                <span id="400609076-hPossession" style="padding-left:2px; display:none">
+                  <img src="http://a.espncdn.com/i/nfl/scoreboard/icon-football.png" style="width:14px;height:9px;"/>
+                </span>
+              </p>
+              <p class="record" id="400609076-hRecord">(12-1, 8-1 Pac-12)</p>
+            </div>
+            <ul class="team-links" id="400609076-hTeamLinks" style="display:none;">
+              <li><a href="/ncf/teams/roster?teamId=2483">Roster</a> »</li>
+              <li><a href="/ncf/teams/stats?teamId=2483&amp;year=2014">Stats</a> »</li>
+            </ul>
+            <ul class="score" id="400609076-hScores" style="display:block">
+              <li id="400609076-hScore1">6</li><li id="400609076-hScore2">17</li>
+              <li id="400609076-hScore3">21</li><li id="400609076-hScore4">7</li>
+              <li id="400609076-hScore5"> </li><li class="final" id="400609076-hTotal">51</li>
+            </ul>
+          </div>
+          <div id="400609076-gameLinks-container">
+            <div class="flag" id="400609076-flagBar" style="display:none"></div>
+            <div class="headline" id="400609076-recapHeadline" style="display:block">
+              <a href="/ncf/recap?gameId=400609076">Oregon cements CFP status with Zona rout</a>
+            </div>
+            <div class="more-links">
+              <div id="400609076-gameLinks" style="width: 275px; display:inline;">
+                <ul>
+                  <li><a href="/ncf/boxscore?gameId=400609076">Box Score</a> »  </li>
+                  <li><a href="/ncf/drivechart?gameId=400609076">Drive Chart</a> »  </li>
+                  <li><a href="/ncf/playbyplay?gameId=400609076">Play-By-Play</a> »  </li>
+                  <li><a href="/ncf/conversation?gameId=400609076" name="&amp;lpos=ncf_scoreboard&amp;lid=conversation">Conversation</a> »  </li>
+                  <li> <a href="/ncf/video?gameId=400609076">Highlights</a> <img src="http://a.espncdn.com/icons/watch.png"/> »  </li>
+                </ul>
+              </div>
+              <div class="expandButtonGame" id="detail-display-button-400609076" onclick="toggleDisplay('400609076', null); return false;" style="display:inline;">+</div>
+            </div>
+          </div>
+          <div class="detail-display" id="detail-display-400609076" style="display: none;">
+            <div class="drive" id="400609076-playInfo" style="display:none">
+              <div class="drive-chart" id="400609076-driveChart">
+                <div class="alert" style="display:none">TOUCHDOWN!</div>
+                <div class="end-zone away" data-awayabbrev="ARIZ" data-awaycolor="C1C1C1" style="background-color:#C1C1C1; border-color:#C1C1C1;"><p><span>A<br/>R<br/>I<br/>Z</span></p></div><div class="field-proper"><div class="drive-line" style="display:none;"><div class="icon-football"><img src="http://a.espncdn.com/i/nfl/scoreboard/icon-football.png"/></div></div><div class="red-zone"></div><div class="yard-line away-0"></div><div class="yard-line away-10"></div><div class="yard-line away-20"></div><div class="yard-line away-30"></div><div class="yard-line away-40"></div><div class="yard-line fifty"></div><div class="yard-line home-40"></div><div class="yard-line home-30"></div><div class="yard-line home-20"></div><div class="yard-line home-10"></div><div class="yard-line home-0"></div><div class="yard-marker away-20">20</div><div class="yard-marker fifty">50</div><div class="yard-marker home-20">20</div><div class="first-down-line"></div><div class="line-scrimmage"></div></div><div class="end-zone home" data-homeabbrev="ORE" data-homecolor="7F7F7F" style="background-color:#7F7F7F; border-color:#7F7F7F;"><p><span>O<br/>R<br/>E</span></p></div><div class="play-status"></div></div><div class="play-header"><div style="float: right;"><a class="play-by-play" href="/ncf/playbyplay?gameId=400609076">View Play-By-Play</a> »</div><h5>Last Play</h5></div><div class="play-detail" id="400609076-lastPlayText" style="clear:both"> </div></div><div class="ldrs-container" id="400609076-leaders" style="overflow: hidden; display:block"><h5 id="400609076-leadersHeader">Game Leaders</h5><div class="leaders" id="400609076-aLeaderDisplay" style="overflow: hidden; display:block;"><div class="vert-text vert-text-4" style="width: 14px; overflow: hidden; background-color:#C1C1C1">A<br/>R<br/>I<br/>Z</div><ul class="leaders-cats"><li>PASS:</li><li>RUSH:</li><li>REC:</li></ul><ul class="leaders-stats"><li id="400609076-aLeader0"><span><a href="http://espn.go.com/college-football/player/_/id/500237/jesse-scroggins-iii">Scroggins III</a></span> 3-11, 79 yds, 1 td</li><li id="400609076-aLeader1"><span><a href="http://espn.go.com/college-football/player/_/id/517210/jerrard-randall">Randall</a></span> 10 car, 81 yds, 1 td</li><li id="400609076-aLeader2"><span><a href="http://espn.go.com/college-football/player/_/id/531078/cayleb-jones">Jones</a></span> 2 rec, 71 yds, 1 td</li></ul></div><div style="clear: both;"></div><div class="leaders" id="400609076-hLeaderDisplay" style="overflow: hidden; display:block;"><div class="vert-text vert-text-3" style="width: 14px; overflow: hidden; background-color:#7F7F7F">O<br/>R<br/>E</div><ul class="leaders-cats"><li>PASS:</li><li>RUSH:</li><li>REC:</li></ul><ul class="leaders-stats"><li id="400609076-hLeader0"><span><a href="http://espn.go.com/college-football/player/_/id/511459/marcus-mariota">Mariota</a></span> 25-38, 313 yds, 2 tds</li><li id="400609076-hLeader1"><span><a href="http://espn.go.com/college-football/player/_/id/511459/marcus-mariota">Mariota</a></span> 10 car, 33 yds, 3 tds</li><li id="400609076-hLeader2"><span><a href="http://espn.go.com/college-football/player/_/id/550666/darren-carrington">Carrington</a></span> 7 rec, 126 yds, 1 td</li></ul></div><div style="clear: both;"></div></div><div class="stats-container" id="400609076-gameStatDisplay" style="display:block"><h5>Game Stats</h5><div class="stat-box first" style="height: 66px;"><div class="stat-graph visitor"><div class="fill" id="400609076-aStat0Percent" style="background:#C1C1C1 none repeat scroll 0% 0%; height:26%;"></div><div class="fade"></div><p id="400609076-aStat0">224</p></div><div class="stat-graph home"><div class="fill" id="400609076-hStat0Percent" style="background:#7F7F7F none repeat scroll 0% 0%; height:74%;"></div><div class="fade"></div><p id="400609076-hStat0">627</p></div><p class="stat-caption">OFF. YDS</p></div><div class="stat-box" style="height: 66px;"><div class="stat-graph visitor"><div class="fill" id="400609076-aStat1Percent" style="background:#C1C1C1 none repeat scroll 0% 0%; height:100%;"></div><div class="fade"></div><p id="400609076-aStat1">2</p></div><div class="stat-graph home"><div class="fill" id="400609076-hStat1Percent" style="background:#7F7F7F none repeat scroll 0% 0%; height:0%;"></div><div class="fade"></div><p id="400609076-hStat1">0</p></div><p class="stat-caption">TURNOVERS</p></div><div class="stat-box" style="height: 66px;"><div class="stat-graph visitor"><div class="fill" id="400609076-aStat2Percent" style="background:#C1C1C1 none repeat scroll 0% 0%; height:35%;"></div><div class="fade"></div><p id="400609076-aStat2">21:05</p></div><div class="stat-graph home"><div class="fill" id="400609076-hStat2Percent" style="background:#7F7F7F none repeat scroll 0% 0%; height:65%;"></div><div class="fade"></div><p id="400609076-hStat2">38:55</p></div><p class="stat-caption">TIME POSS</p></div></div></div><div class="game-notes" id="400609076-gameNote" style="display:block">PAC-12 CHAMPIONSHIP GAME<br/>AT SANTA CLARA, CA</div></div></div></div></div></div>

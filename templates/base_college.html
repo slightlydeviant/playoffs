@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link href="{% static 'site.css' %}" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  <title>{% block title %}Lee Family College Bowl Series 2014{% endblock %}</title>
+
+	<style>{% block css %}{% endblock %}</style>
+  </head>
+
+  <body>
+  	<nav class="navbar navbar-default">
+  		<div class="container-fluid">
+  			<div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+  				<a class="navbar-brand" href="{% url 'home' %}">Lee Family Bowls</a>
+  			</div>
+  			<div class="collapse navbar-collapse">
+  				<ul class="nav navbar-nav">
+  					<li><a href="{% url 'picks:index' %}">My Picks</a></li>
+  					<li><a href="{% url 'picks:grid' %}">The Grid</a></li>
+  					<li><a href="{% url 'picks:leaderboard' %}">Leaderboard</a></li>
+  				</ul>
+    			<ul class="nav navbar-nav navbar-right">
+            <li>
+      				{% if user.is_active %}
+      				<p class="navbar-text">Welcome back, <strong>{% firstof user.get_short_name user.get_username %}</strong>!
+                <div id="nav-links" class="btn-group btn-group-xs" role="group" aria-label="...">
+                  <a href="{% url 'accounts:logout' %}" class="btn btn-warning" role="button">Log out</a>
+                </div>
+      				{% else %}
+      				<p class="navbar-text">Welcome, Guest!
+                <div id="nav-links" class="btn-group btn-group-xs" role="group" aria-label="...">
+                  <a href="{% url 'accounts:login' %}" class="btn btn-warning" role="button">Log In</a>
+                  <a href="{% url 'accounts:register' %}" class="btn btn-warning" role="button">Register</a>
+                </div>
+      				{% endif %}
+            </li>
+          </ul>
+  			</div>
+  		</div>
+  	</nav>
+
+
+    {% block content %}{% endblock %}
+
+    <hr>
+    <!--<div class="container">
+      <p>Dedicated to Nancy Lee - Last updated 2014-12-10</p>
+    </div>-->
+  </body>
+</html>

@@ -1,0 +1,15 @@
+To do:
+Version 1.0
+- Confirm working points logic
+- Confirm tiebreaker in logic
+
+
+Version 1.1
+- Automate season creation
+  - Add interface for game display parameters (game name, team initial)
+- When reloading page after input error, keep good input in form
+- Email password changes
+- Style and Design
+- League/Pool Support
+- Migrate from SQLite to Postgre or MySQL
+- Trash talk page (league level)
