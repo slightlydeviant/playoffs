@@ -1,5 +1,5 @@
 """
-Django settings for bowlgames project.
+Django settings for playoffs project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'picks',
+    # 'picks',
     'accounts',
     'nfl',
     'ncaaf',
@@ -55,9 +55,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'bowlgames.urls'
+ROOT_URLCONF = 'playoffs.urls'
 
-WSGI_APPLICATION = 'bowlgames.wsgi.application'
+WSGI_APPLICATION = 'playoffs.wsgi.application'
 
 # Account Specific settings and parameters
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -79,7 +79,7 @@ if DEBUG:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'bowlpicks.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'playoffs.sqlite3'),
     }
 }
 
@@ -102,7 +102,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    "C:/Users/elee/Documents/Misc/DjangoWebProjects/playoffs/bowlgames/static/",
+    "C:/Users/elee/Documents/Misc/DjangoWebProjects/playoffs/playoffs/static/",
 )
 
 # Template Directory

@@ -5,14 +5,15 @@
 	<div id="fbjumbo" class="jumbotron">
 		<h2>Welcome to College Football Bowl Champions!</h2>
 	</div>
+	{% if form %}
 	<div class="container">
 		<h3>To start playing, create a league below and invite your friends</h3>
 		<div class="container">
 			{% if league %}
-				{% if league.pw == "" %}
-					<p class="create-success">You have successfully created a the public league "{{ league.name }}" with id "{{ league.id }}"</p>
+				{% if league.isPrivate == False %}
+					<p class="create-success">You have successfully created a the public league "{{ league.leagueName }}" with id "{{ league.id }}"</p>
 				{% else %}
-					<p class="create-success">You have successfully created a the private league "{{ league.name }}" with id "{{ league.id }}" and password "{{ league.pw }}"</p>
+					<p class="create-success">You have successfully created a the private league "{{ league.leagueName }}" with id "{{ league.id }}" and password "{{ league.password }}"</p>
 				{% endif %}
 			{% endif %}
 			{% if error %}
@@ -22,12 +23,24 @@
 			{% crispy form %}
 		</div>
 	</div>
+	{% else %}
+	<div class="container">
+		<h3>Create a league, Invite your friends!</h3>
+		<p>College Football Bowl Champions is <i>the</i> place to host your bowl game and playoff pool. We offer several choices for scoring, private and public leagues, a trash talk section for your league and more. <a href="{% url 'accounts:register' %}">Register</a> for a free account, <a href="{% url 'accounts:login' %}">log in</a> and return to this page to create your league today!</p>
+	</div>
+	{% endif %}
 </div>
 
 <script type="text/javascript">
 	$(function () {
-		$("#div_id_password")[0].style.display = "none";
-		var i = true;
+		if ($("#id-ncaafLeagueForm .alert").text() == ""){
+			$("#div_id_password")[0].style.display = "none";
+			var i = true;
+		} else {
+			$("#div_id_password")[0].style.display = "block";
+			var i = false;
+		}
+
 		$("#id_privacy").click(function(){
 			//console.log($("#id_privacy")[0].value);
 			if (i == true) {

@@ -24,4 +24,5 @@ urlpatterns = patterns('',
         name='confirm'),
     url(r'^password/done/$',
         'django.contrib.auth.views.password_reset_complete'),
+    url(r'^(?P<userId>\d+)/$', myaccount, name='myaccount'),
 )

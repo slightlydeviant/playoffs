@@ -7,7 +7,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'bowlgames.views.home', name = 'home'),
+    url(r'^$', 'playoffs.views.home', name = 'home'),
+    url(r'^search$', 'playoffs.views.search', name='search'),
     url(r'^nfl/', include('nfl.urls', namespace = 'nfl')),
     url(r'^ncaaf/', include('ncaaf.urls', namespace = 'ncaaf')),
     url(r'^nba/', include('nba.urls', namespace = 'nba')),
@@ -15,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^ncaaw/', include('ncaaw.urls', namespace = 'ncaaw')),
     url(r'^accounts/', include('accounts.urls', namespace = 'accounts')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^games/', include('picks.urls', namespace = "picks")),
+    # url(r'^games/', include('picks.urls', namespace = "picks")),
 )
 
 urlpatterns += staticfiles_urlpatterns()

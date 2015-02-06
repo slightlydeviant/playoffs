@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-{% if error %}
-  <p>{{ error }}</p>
-{% endif %}
-
 <div class="container">
+  <h3>Register</h3>
+  {% if error %}
+  <p>{{ error }}</p>
+  {% endif %}
   {% load crispy_forms_tags %}
   {% crispy form %}
 </div>
-
 {% endblock %}

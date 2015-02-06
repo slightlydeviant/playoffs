@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <p>Thanks for searching for: "{{ query_string }}"</p>
+  {% if found_ids %}
+    {% regroup found_ids by sportId as id_result %}
+    <p>Your search matched exactly to the id for:</p>
+    <ul>
+      {% for i in id_result %}
+        <li>{{ i.grouper.displayName }}
+          <ul>
+            {% for i2 in i.list %}
+              {% with i.grouper.sportName|add:":leaguehome" as urltarget %}
+                <li><a href="{% url urltarget i2.id %}">{{ i2.leagueName }}</a> (created by {{ i2.creator.get_full_name }})</li>
+              {% endwith %}
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if found_entries %}
+    <p>Below are the leagues that match this name</p>
+    {% regroup found_entries by sportId as results %}
+    <ul>
+      {% for r in results %}
+        <li>{{ r.grouper.displayName }}
+          <ul>
+            {% for r2 in r.list %}
+              {% with r.grouper.sportName|add:":leaguehome" as urltarget %}
+                <li><a href="{% url urltarget r2.id %}">{{ r2.leagueName }}</a> (created by {{ r2.creator.get_full_name }})</li>
+              {% endwith %}
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if found_ids == None and found_entries == None %}
+    <p>Unfortunately, there are no leagues that match this name</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -16,7 +16,7 @@ class LogInForm(forms.Form):
     username = forms.CharField(label='Username', max_length=50,
         error_messages={'required': 'Enter a valid username'})
     password = forms.CharField(label='Password', widget=forms.PasswordInput,
-        error_messages={'required': 'Incorrect password'})
+        error_messages={'required': 'This field is required'})
 
     def clean_username(self):
         """

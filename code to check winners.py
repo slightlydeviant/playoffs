@@ -9,7 +9,7 @@ for t in Team.objects.all()
 # cron specification
 # MAILTO = "scoob1212@yahoo.com"
 # min     hour    day     month   weekday user  file
-# */10    12-1    *       12,1    *       web   /home/web/sites/bowlgames_production/cronjob.sh
+# */10    12-1    *       12,1    *       web   /home/web/sites/playoffs_production/cronjob.sh
 
 
 true_score = Game.objects.get(game__contains=champgame).totalscore

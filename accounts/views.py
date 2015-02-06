@@ -6,6 +6,9 @@ from accounts.forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
+# for functionality beyond a simple account app:
+from ncaaf.models import League, LeagueUsers
+
 class LogIn(View):
     """
     Class of functions handling user log in.
@@ -23,14 +26,19 @@ class LogIn(View):
                                 password = form.cleaned_data['password'])
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(reverse('accounts:myaccount', kwargs={'userId':user.id}))
             else:
                 error = "1"
                 return render(request, 'accounts/login.html', {'form': form, 'error': error})
         else:
-            form = LogInForm(form.cleaned_data)
-            error = "2"
-            return render(request, 'accounts/login.html', {'form': form, 'error': error})
+            if form.data['password'] == "" and form.data['username'] != "":
+                form = LogInForm(form.clean)
+                error = "1"
+                return render(request, 'accounts/login.html', {'form': form, 'error': error})
+            else:
+                form = LogInForm(form.cleaned_data)
+                error = "2"
+                return render(request, 'accounts/login.html', {'form': form, 'error': error})
 
 class RegisterUser(View):
     """
@@ -66,3 +74,16 @@ def LogOut(request):
     """
     logout(request)
     return HttpResponseRedirect(reverse('home'))
+
+def myaccount(request, userId):
+    """
+    Control an individuals account page, where they can view their leagues
+    and edit personal information
+
+    """
+    if request.user.is_authenticated():
+        # get current users leagues.
+        leagues = League.objects.filter(leagueusers__userId=request.user)
+        return render(request, 'accounts/myaccount.html', {'leagues': leagues})
+    else:
+        return HttpResponseRedirect(reverse('accounts:login'))

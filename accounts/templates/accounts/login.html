@@ -3,12 +3,11 @@
 {% block content %}
 
 <div class="container">
+  <h3>Log In</h3>
   {% if error == '1' %}
-    <p><strong><font color='red'>Username and password did not match. Please try again.</font></strong></p>
-    <p><a href ='{% url 'accounts:password_reset' %}' class='center'>Forgot Password?</a></p>
+    <p>Username and password did not match. Please try again. <a href ='{% url 'accounts:password_reset' %}' class='center'>Forgot Password?</a></p>
   {% elif error == '2' %}
-    <p><strong><font color='red'>Username does not exist. Please register for a free account.</font></strong></p>
-    <p><a href ='{% url 'accounts:register' %}' class='center'>Register</a></p>
+    <p>Username does not exist. Please <a href ='{% url 'accounts:register' %}' class='center'>register</a> for a free account.</p>
   {% endif %}
   {% load crispy_forms_tags %}
   {% crispy form %}

@@ -5,9 +5,9 @@ import requests
 import re
 import os
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bowlgames.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'playoffs.settings')
 
-import bowlgames
+import playoffs
 from django.contrib.auth.models import User
 from picks.models import *
 

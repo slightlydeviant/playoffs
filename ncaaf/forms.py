@@ -17,7 +17,7 @@ class MakeLeague(forms.Form):
         error_messages={'required': 'Enter a valid league name'})
     privacy = forms.BooleanField(label='Check if this is a Private league',
         required=False)
-    password = forms.CharField(label='Password to join league',
+    password = forms.CharField(label='Password to join league', max_length=40,
         required=False)
     invitees = forms.CharField(label="Enter email addresses of people you'd like to invite to this league (separated by spaces, semicolons or commas)",
         required=False, widget=forms.Textarea)
