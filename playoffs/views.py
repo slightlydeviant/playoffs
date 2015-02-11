@@ -25,6 +25,8 @@ def search(request):
         id_query = get_query(query_string, ['id',])
         found_ids = League.objects.filter(id_query)
 
+        leagues = League.objects.filter(leagueusers__userId=request.user.id)
+
     return render_to_response('searchresults.html',
-                              { 'query_string': query_string, 'found_entries': found_entries, 'found_ids': found_ids },
+                              { 'query_string': query_string, 'found_entries': found_entries, 'found_ids': found_ids, 'user_leagues': leagues },
                               context_instance=RequestContext(request))

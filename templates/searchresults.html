@@ -11,8 +11,20 @@
         <li>{{ i.grouper.displayName }}
           <ul>
             {% for i2 in i.list %}
-              {% with i.grouper.sportName|add:":leaguehome" as urltarget %}
-                <li><a href="{% url urltarget i2.id %}">{{ i2.leagueName }}</a> (created by {{ i2.creator.get_full_name }})</li>
+              {% with i.grouper.sportName|add:":leaguejoin" as urltargetjoin and i.grouper.sportName|add:":leaguehome" as urltargetview %}
+                <li class="custom-list">
+                  <div>
+                    {% if i2 in user_leagues %}
+                    <a href="{% url urltargetview i2.id %}"><button class="btn btn-xs btn-warning btn-list">View</button></a>
+                    {% else %}
+                    <a href="{% url urltargetjoin i2.id %}"><button class="btn btn-xs btn-primary btn-list">Join</button></a>
+                    {% endif %}
+                    {{ i2.leagueName }} (created by {{ i2.creator.get_full_name }})
+                    {% if i2.isPrivate %}
+                    <span class="glyphicon glyphicon-lock" aria-label="Private" title="Private"></span>
+                    {% endif %}
+                  </div>
+                </li>
               {% endwith %}
             {% endfor %}
           </ul>
@@ -21,24 +33,42 @@
     </ul>
   {% endif %}
   {% if found_entries %}
-    <p>Below are the leagues that match this name</p>
-    {% regroup found_entries by sportId as results %}
-    <ul>
-      {% for r in results %}
-        <li>{{ r.grouper.displayName }}
-          <ul>
-            {% for r2 in r.list %}
-              {% with r.grouper.sportName|add:":leaguehome" as urltarget %}
-                <li><a href="{% url urltarget r2.id %}">{{ r2.leagueName }}</a> (created by {{ r2.creator.get_full_name }})</li>
-              {% endwith %}
-            {% endfor %}
-          </ul>
+  <p>Below are the leagues that match this name</p>
+  {% regroup found_entries by sportId as results %}
+  <ul>
+    {% for r in results %}
+    <li>{{ r.grouper.displayName }}
+      <ul>
+        {% for r2 in r.list %}
+        {% with r.grouper.sportName|add:":leaguejoin" as urltargetjoin and r.grouper.sportName|add:":leaguehome" as urltargetview %}
+        <li class="custom-list">
+          <div>
+            {% if r2 in user_leagues %}
+              <a href="{% url urltargetview r2.id %}"><button class="btn btn-xs btn-warning btn-list">View</button></a>
+            {% else %}
+              <a href="{% url urltargetjoin r2.id %}"><button class="btn btn-xs btn-primary btn-list">Join</button></a>
+            {% endif %}
+            {{ r2.leagueName }} (created by {{ r2.creator.get_full_name }})
+            {% if r2.isPrivate %}
+              <span class="glyphicon glyphicon-lock" aria-label="Private" title="Private"></span>
+            {% endif %}
+          </div>
         </li>
-      {% endfor %}
-    </ul>
+        {% endwith %}
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
   {% endif %}
   {% if found_ids == None and found_entries == None %}
     <p>Unfortunately, there are no leagues that match this name</p>
   {% endif %}
 </div>
+
+<script type="text/javascript">
+  function joinLeague(node) {
+    return confirm("Are you sure you wish to join this league?");
+  }
+</script>
 {% endblock %}

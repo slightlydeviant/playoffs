@@ -5,6 +5,7 @@ from django.views.generic import View
 from accounts.forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+import re
 
 # for functionality beyond a simple account app:
 from ncaaf.models import League, LeagueUsers
@@ -20,13 +21,17 @@ class LogIn(View):
         return render(request, 'accounts/login.html', {'form': form})
 
     def post(self, request):
+        redirect_to = re.search(r'\?next=(.*),*', request.META.get('HTTP_REFERER', ''))
         form = LogInForm(request.POST)
         if form.is_valid():
             user = authenticate(username = form.cleaned_data['username'],
                                 password = form.cleaned_data['password'])
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect(reverse('accounts:myaccount', kwargs={'userId':user.id}))
+                if redirect_to:
+                    return HttpResponseRedirect(redirect_to.group(1))
+                else:
+                    return HttpResponseRedirect(reverse('accounts:myaccount', kwargs={'userId':user.id}))
             else:
                 error = "1"
                 return render(request, 'accounts/login.html', {'form': form, 'error': error})

@@ -1,15 +1,21 @@
 To do:
-Version 1.0
-- Confirm working points logic
-- Confirm tiebreaker in logic
-
-
-Version 1.1
 - Automate season creation
   - Add interface for game display parameters (game name, team initial)
+
 - When reloading page after input error, keep good input in form
+  - Done for login/register/create league.
+  - Still needed for picks page
+
 - Email password changes
+  - Need to hook up to a real email address
+
 - Style and Design
-- League/Pool Support
+  - Trash talk page (league level)
+  - private league icon on search page
+  - change bullets in search to Join/View buttons
+  - js popup for private league login
+    - on league page, before any content is loaded?
+      - redirect back one page (if from search page) or to home (if from login/direct link)
+    - on search page? How to make sure a user is part/not part of that league?
+
 - Migrate from SQLite to Postgre or MySQL
-- Trash talk page (league level)

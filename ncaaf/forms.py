@@ -44,3 +44,22 @@ class MakeLeague(forms.Form):
         self.helper.form_method = 'post'
         self.helper.form_action = ''
         self.helper.add_input(Submit('submit', 'Create'))
+
+class JoinPrivateLeague(forms.Form):
+    """
+    Form for joining a private league
+
+    """
+    password = forms.CharField(label='Password', max_length=40,
+        widget=forms.PasswordInput,
+        error_messages={'required': 'This field is required'})
+
+    def __init__(self, *args, **kwargs):
+        super(JoinPrivateLeague, self).__init__(*args, **kwargs)
+        self.fields['password'].widget.attrs['placeholder'] = 'Password'
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-JoinLeagueForm'
+        self.helper.form_class = 'crisp'
+        self.helper.form_method = 'post'
+        self.helper.form_action = ''
+        self.helper.add_input(Submit('submit', 'Join'))

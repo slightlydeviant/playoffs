@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from ncaaf.forms import MakeLeague
+from ncaaf.forms import MakeLeague, JoinPrivateLeague
 from ncaaf.models import *
 from django.contrib.auth.models import User
 from django.views.generic import View
@@ -43,9 +43,64 @@ class ncaafHome(View):
             return render(request, 'ncaaf/ncaafhome.html', {'form': form})
 
 def leaguehome(request, leagueId):
-    try:
-        league = League.objects.get(pk=leagueId)
-    except League.DoesNotExist:
-        raise Http404("League does not exist")
-    return render(request, 'ncaaf/leaguehome.html', { 'league': league })
-    # return HttpResponse("You're looking at league %s." % leagueId)
+    """
+    View creating the League Home page. You must be logged in to view a league.
+    If, once you log in, the league is private and you are not part of it,
+    display a javascript pop up asking for league password before rendering ANY of
+    the page.
+
+    """
+    if not request.user.is_authenticated():
+        return redirect('/accounts/login/?next=%s' % request.path)
+    else:
+        try:
+            league = League.objects.get(pk=leagueId)
+        except League.DoesNotExist:
+            raise Http404("League does not exist")
+        return render(request, 'ncaaf/leaguehome.html', { 'league': league })
+
+class leaguejoin(View):
+    """
+    View controlling league joining logic. Includes private league password entry
+    and checks to make sure a user is not already in that league.
+
+    """
+    def get(self, request, leagueId):
+        if not request.user.is_authenticated():
+            return redirect('/accounts/login/?next=%s' % request.path)
+        else:
+            try:
+                league = League.objects.get(pk=leagueId)
+            except League.DoesNotExist:
+                raise Http404("League does not exist")
+            # Automatically join and redirect to league home if public
+            if league.isPrivate == False:
+                if request.user.id in league.leagueusers_set.values_list('userId', flat=True):
+                    return render(request, 'ncaaf/leaguehome.html', { 'league': league })
+                else:
+                    lu = LeagueUsers(userId = request.user, leagueId = league)
+                    lu.save()
+                    return render(request, 'ncaaf/leaguehome.html', { 'league': league })
+            # Bring up private join page if private
+            else:
+                form = JoinPrivateLeague();
+                return render(request, 'ncaaf/leaguejoin.html', { 'league': league, 'form': form })
+
+    def post(self, request, leagueId):
+        form = JoinPrivateLeague(request.POST)
+        try:
+            league = League.objects.get(pk=leagueId)
+        except League.DoesNotExist:
+            raise Http404("League does not exist")
+        if form.is_valid():
+            if form.cleaned_data['password'] == league.password:
+                lu = LeagueUsers(userId = request.user, leagueId = league)
+                lu.save()
+                return render(request, 'ncaaf/leaguehome.html', { 'league': league })
+            else:
+                error = "The entered password did not match League password"
+                form = JoinPrivateLeague(form.cleaned_data)
+                return render(request, 'ncaaf/leaguejoin.html', { 'league': league, 'form': form, 'error': error })
+        else:
+            form = JoinPrivateLeague(form.cleaned_data)
+            return render(request, 'ncaaf/leaguejoin.html', { 'league': league, 'form': form })
